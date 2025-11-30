@@ -1,0 +1,50 @@
+template:
+  bootstrap: 5
+  bootswatch: united
+  bslib:
+    primary: "#0072B2"
+    secondary: "#E69F00"
+    font_scale: 1.0
+
+url: https://ebareke.github.io/rnaseqDegy
+
+home:
+  title: "rnaseqDegy"
+  description: "Unified Bulk RNA-seq QC, Differential Expression, and Enrichment Pipeline"
+
+navbar:
+  structure:
+    left: [intro, reference, articles, news]
+    right: [github]
+  components:
+    intro:
+      text: "Getting started"
+      href: index.html
+    reference:
+      text: "Reference"
+      href: reference/index.html
+    articles:
+      text: "Vignettes"
+      href: articles/index.html
+    news:
+      text: "Changelog"
+      href: news/index.html
+    github:
+      icon: fab fa-github
+      href: https://github.com/ebareke/rnaseqDegy
+
+reference:
+  - title: "Main pipeline"
+    contents:
+      - run_rnaseqDegy
+
+articles:
+  - title: "Workflows"
+    contents: []
+
+news:
+  one_page: true
+
+authors:
+  Bareke, Eric:
+    href: "https://ebareke.github.io"

@@ -1,0 +1,35 @@
+cff-version: 1.2.0
+message: "If you use rnaseqDegy in your research, please cite it as below."
+title: "rnaseqDegy: Unified Bulk RNA-seq QC, Differential Expression, and Enrichment Pipeline"
+authors:
+  - family-names: Bareke
+    given-names: Eric
+    affiliation: "Majewski Lab, McGill University"
+    orcid: "0000-0000-0000-0000"
+version: "0.1.0"
+doi: ""
+url: "https://github.com/ebareke/rnaseqDegy"
+repository-code: "https://github.com/ebareke/rnaseqDegy"
+license: "MIT"
+date-released: "2025-02-01"
+keywords:
+  - RNA-seq
+  - differential expression
+  - gene expression
+  - DESeq2
+  - edgeR
+  - GSEA
+  - ORA
+  - QC
+  - bioinformatics
+description: >-
+  rnaseqDegy is an R package providing a fully automated pipeline for bulk
+  RNA-seq analysis, including QC (PCA, batch correction, correlation heatmaps,
+  variable-gene heatmaps), differential expression using DESeq2 or edgeR,
+  and functional enrichment (GO ORA and GSEA using offline GMT files). The
+  package supports human and mouse datasets and outputs publication-ready
+  plots and tables.
+cite-as:
+  apa: >-
+    Bareke, E. (2025). *rnaseqDegy: Unified Bulk RNA-seq QC, Differential
+    Expression, and Enrichment Pipeline*. https://github.com/ebareke/rnaseqDegy

@@ -1,0 +1,52 @@
+Package: rnaseqDegy
+Type: Package
+Title: Unified Bulk RNA-seq QC, Differential Expression, and Enrichment Pipeline
+Version: 0.1.0
+Authors@R: 
+    person(given = "Eric", family = "Bareke", 
+           email = "eric.bareke@mcgill.ca", 
+           role = c("aut", "cre"),
+           comment = c(ORCID = "0000-0000-0000-0000"))
+Description: Provides a fully automated, command-line friendly bulk RNA-seq
+    pipeline for human and mouse data, starting from a raw count matrix and
+    a sample design table. The package performs count filtering, QC (PCA with
+    optional batch correction, sample correlations, top variable-gene heatmaps),
+    differential expression using DESeq2 or edgeR, generation of enhanced
+    volcano plots, and functional enrichment via over-representation analysis
+    (ORA) and gene set enrichment analysis (GSEA) using user-supplied GMT
+    files. All plots are auto-dimensioned with publication-ready defaults.
+License: MIT + file LICENSE
+Encoding: UTF-8
+LazyData: true
+Depends: 
+    R (>= 4.2.0)
+Imports:
+    argparser,
+    ggplot2,
+    ggrepel,
+    DESeq2,
+    edgeR,
+    limma,
+    clusterProfiler,
+    enrichplot,
+    EnhancedVolcano,
+    org.Hs.eg.db,
+    org.Mm.eg.db,
+    AnnotationDbi,
+    pheatmap,
+    RColorBrewer,
+    data.table,
+    dplyr,
+    tidyr,
+    matrixStats
+Suggests:
+    knitr,
+    rmarkdown,
+    testthat (>= 3.0.0),
+    BiocParallel,
+    covr
+URL: https://github.com/ebareke/rnaseqDegy
+BugReports: https://github.com/ebareke/rnaseqDegy/issues
+Config/testthat/edition: 3
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.3.2

@@ -1,0 +1,17 @@
+^.*\.Rproj$
+^\.Rproj\.user$
+^\.git$
+^\.gitignore$
+^\.github$
+^README\.Rmd$
+^README_files$
+^docs$
+^pkgdown$
+^_pkgdown\.yml$
+^\.Rhistory$
+^\.RData$
+^\.Renviron$
+^\.vscode$
+^\.idea$
+^inst/doc$
+^LICENSE\.md$

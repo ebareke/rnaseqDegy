@@ -1,0 +1,44 @@
+# R project files
+.Rproj.user/
+*.Rproj
+.Rhistory
+.RData
+.Ruserdata
+
+# R package build artifacts
+.DS_Store
+.Rcheck/
+inst/doc/
+tmp/
+*.tar.gz
+
+# Compiled code
+*.o
+*.so
+*.dll
+
+# CRAN / build ignores
+.Rbuildignore
+
+# Logs
+*.log
+*.out
+*.err
+
+# RStudio
+.Rproj.user/
+
+# pkgdown site
+/docs/
+/pkgdown/
+
+# GitHub actions and metadata
+.github/*
+
+# IDEs
+.Rproj.user/
+.idea/
+.vscode/
+
+# Cache
+.cache/
