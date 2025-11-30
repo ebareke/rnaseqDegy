@@ -1,0 +1,5 @@
+Sample	Batch	Condition
+S1	B1	Control
+S2	B1	Control
+S3	B2	Mutant
+S4	B2	Mutant
