@@ -1,4 +1,4 @@
-# rnaseqDegy <img src="https://img.shields.io/badge/status-active-success" align="right"/>
+# ***rnaseqDegy*** <img src="https://img.shields.io/badge/status-active-success" align="right"/>
 
 ### 🚀 Unified Bulk RNA‑seq QC, Differential Expression, and Enrichment Pipeline
 **Author:** Dr. Eric Bareke (Majewski Lab, McGill University)  
