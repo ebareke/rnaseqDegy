@@ -29,8 +29,8 @@ tmp/
 .Rproj.user/
 
 # pkgdown site
-/docs/
-/pkgdown/
+#/docs/
+#/pkgdown/
 
 # GitHub actions and metadata
 .github/*
