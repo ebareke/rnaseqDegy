@@ -57,7 +57,7 @@ This Code of Conduct applies to:
 Instances of abusive, harassing, or otherwise unacceptable behavior may be
 reported to **Dr. Eric Bareke** (Maintainer) at:
 
-**eric.bareke@mcgill.ca**
+**eb.bioinfo@pm.me**
 
 All complaints will be reviewed and investigated promptly and fairly.
 Maintainers are obligated to respect the privacy and security of anyone who
