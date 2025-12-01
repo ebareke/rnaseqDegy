@@ -1,4 +1,4 @@
-# rnaseqDegy ![](https://img.shields.io/badge/status-active-success)
+# ***rnaseqDegy*** ![](https://img.shields.io/badge/status-active-success)
 
 ### 🚀 Unified Bulk RNA‑seq QC, Differential Expression, and Enrichment Pipeline
 
@@ -190,3 +190,11 @@ MIT License — see `LICENSE` file.
 - [`run_rnaseqDegy()`](https://ebareke.github.io/rnaseqDegy/reference/run_rnaseqDegy.md)
   : run_rnaseqDegy
 
+# Articles
+
+### Vignettes
+
+- [Introduction to
+  rnaseqDegy](https://ebareke.github.io/rnaseqDegy/articles/rnaseqDegy-intro.md):
+- [Advanced rnaseqDegy
+  Workflows](https://ebareke.github.io/rnaseqDegy/articles/rnaseqDegy-advanced-workflows.md):

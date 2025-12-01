@@ -1,0 +1,188 @@
+# Introduction to rnaseqDegy
+
+## Overview
+
+`rnaseqDegy` provides a **fully automated end-to-end bulk RNA‑seq
+pipeline** for human and mouse datasets. Starting from a raw count
+matrix and a sample design file, it performs QC, differential expression
+(DESeq2/edgeR), enhanced visualization, and comprehensive functional
+enrichment (ORA and GSEA using offline GMTs).
+
+This vignette demonstrates a minimal reproducible workflow.
+
+## Installation
+
+``` r
+# Install devtools if not installed
+install.packages("devtools")
+
+# Install rnaseqDegy from GitHub
+devtools::install_github("ebareke/rnaseqDegy")
+```
+
+## Input Files
+
+### Count matrix (TSV)
+
+Must contain: - Column 1: gene IDs (Ensembl or Gene Symbol) - Remaining
+columns: integer raw counts
+
+Example:
+
+    GeneID   S1   S2   S3   S4
+    ENSG1    50   23   11   9
+    ENSG2    140  180  90   76
+
+### Sample design matrix
+
+Must contain exactly: - `Sample` - `Batch` - `Condition`
+
+Example:
+
+    Sample   Batch   Condition
+    S1       B1      Control
+    S2       B1      Control
+    S3       B2      Mutant
+    S4       B2      Mutant
+
+Example input files are provided in:
+
+``` r
+system.file("extdata", "example_counts.tsv", package = "rnaseqDegy")
+system.file("extdata", "example_design.tsv", package = "rnaseqDegy")
+```
+
+## Quick Start Example
+
+``` r
+library(rnaseqDegy)
+
+counts <- system.file("extdata", "example_counts.tsv", package = "rnaseqDegy")
+design <- system.file("extdata", "example_design.tsv", package = "rnaseqDegy")
+
+run_rnaseqDegy(
+  counts = counts,
+  design = design,
+  species = "human",
+  de_method = "DESeq2",
+  condition_reference = "Control",
+  condition_test = "Mutant",
+  batch_correction = TRUE,
+  run_ora = FALSE,
+  run_gsea = FALSE,
+  output_dir = "rnaseqDegy_example"
+)
+```
+
+This produces: - PCA plots - Sample correlation heatmap - Top
+variable-gene heatmap - Differential expression results - Volcano plot
+
+Enrichment analyses (ORA/GSEA) can be enabled by setting
+`run_ora = TRUE`, `run_gsea = TRUE` and providing GMTs.
+
+## Differential Expression Options
+
+### Choosing DE method
+
+``` r
+de_method = "DESeq2"   # default
+# OR
+de_method = "edgeR"
+```
+
+### Adjusting thresholds
+
+``` r
+alpha = 0.05     # FDR threshold
+lfc_cutoff = 1   # abs(log2FC) cutoff
+```
+
+## Enrichment Analysis
+
+### ORA (GO BP / MF / CC)
+
+Enabled by:
+
+``` r
+run_ora = TRUE
+```
+
+Uses: -
+[`clusterProfiler::enrichGO()`](https://rdrr.io/pkg/clusterProfiler/man/enrichGO.html) -
+`simplify()` for redundancy reduction
+
+Outputs: - Dotplot - Barplot - Cnet plot - Emap plot
+
+### GSEA (offline GMT)
+
+Requires: - `gmt_dir`: folder containing GMT files - `gmt_files`:
+character vector of GMT filenames
+
+Example:
+
+``` r
+run_rnaseqDegy(
+  ...,
+  run_gsea = TRUE,
+  gmt_dir = "gmt/",
+  gmt_files = c("HALLMARK.gmt", "GO_BP.gmt")
+)
+```
+
+Outputs: - Dotplot - Barplot - Cnetplot - Emapplot - Ranked GSEA results
+table
+
+## Batch Correction
+
+Set:
+
+``` r
+batch_correction = TRUE
+```
+
+Uses:
+[`limma::removeBatchEffect()`](https://rdrr.io/pkg/limma/man/removeBatchEffect.html)
+applied to VST-transformed data.
+
+### PCA before vs after batch correction
+
+Both versions are automatically generated based on the option.
+
+## Correlation Heatmap
+
+Correlation method controlled by:
+
+``` r
+corr_method = "pearson"  # default
+# or "spearman", "kendall"
+```
+
+## Output Structure
+
+After running, `output_dir` contains:
+
+    QC_PCA_*.pdf/png
+    QC_sampleCorrelation.pdf/png
+    QC_topVar500_heatmap.pdf/png
+    DE_results_all.tsv
+    normalized_counts.tsv
+    DE_volcano.pdf/png
+    ORA_GO_BP_*.tsv + plots
+    ORA_GO_MF_*.tsv + plots
+    ORA_GO_CC_*.tsv + plots
+    GSEA_<gmt>_*.tsv + plots
+
+## Session Info
+
+``` r
+sessionInfo()
+```
+
+## Conclusion
+
+`rnaseqDegy` provides a streamlined, powerful, and fully automated
+workflow for RNA‑seq differential expression and enrichment analysis. It
+is ideal for both HPC batch pipelines and everyday command‑line usage.
+
+For issues or feature requests, visit:
+<https://github.com/ebareke/rnaseqDegy/issues>

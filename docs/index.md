@@ -1,4 +1,4 @@
-# rnaseqDegy ![](https://img.shields.io/badge/status-active-success)
+# ***rnaseqDegy*** ![](https://img.shields.io/badge/status-active-success)
 
 ### 🚀 Unified Bulk RNA‑seq QC, Differential Expression, and Enrichment Pipeline
 

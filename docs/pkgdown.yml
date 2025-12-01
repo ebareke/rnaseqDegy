@@ -1,8 +1,10 @@
 pandoc: 3.6.3
 pkgdown: 2.2.0
 pkgdown_sha: ~
-articles: {}
-last_built: 2025-12-01T02:09Z
+articles:
+  rnaseqDegy-advanced-workflows: rnaseqDegy-advanced-workflows.html
+  rnaseqDegy-intro: rnaseqDegy-intro.html
+last_built: 2025-12-01T03:41Z
 urls:
   reference: https://ebareke.github.io/rnaseqDegy/reference
   article: https://ebareke.github.io/rnaseqDegy/articles
